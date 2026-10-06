@@ -1,0 +1,6 @@
+node_modules/
+.next/
+# out/ is intentionally tracked: ready-to-upload static site.
+.env*
+!.env.example
+*.tsbuildinfo

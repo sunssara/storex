@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "storex-contact",
+  "main": "contact-worker.ts",
+  "compatibility_date": "2026-10-07",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://storex.kz"
+  }
+}

@@ -1,4 +1,5 @@
 import { ScrollReveal } from '@/components/scroll-reveal';
+import { CursorGlow } from '@/components/cursor-glow';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/header';
@@ -18,5 +19,5 @@ export const metadata: Metadata = { metadataBase: new URL(siteUrl), title: { def
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <html lang={locale} suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html: `try{document.documentElement.dataset.theme=localStorage.getItem('storex-theme')==='light'?'light':'dark'}catch{}`}}/></head><body id="top"><a className="skip-link" href="#main">{copy.skip[locale]}</a><Header locale={locale}/><ScrollReveal/><main id="main">{children}</main><Footer locale={locale}/></body></html>;
+  return <html lang={locale} suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html: `try{document.documentElement.dataset.theme=localStorage.getItem('storex-theme')==='light'?'light':'dark'}catch{}`}}/></head><body id="top"><a className="skip-link" href="#main">{copy.skip[locale]}</a><Header locale={locale}/><ScrollReveal/><CursorGlow/><main id="main">{children}</main><Footer locale={locale}/></body></html>;
 }

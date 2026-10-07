@@ -7,10 +7,11 @@ export function PartnerMarquee() {
   const group = useRef<HTMLDivElement>(null);
   const [duration, setDuration] = useState(160);
   useEffect(() => {
-    if (!group.current) return;
-    const measure = () => setDuration(group.current!.getBoundingClientRect().width / 35);
+    const element = group.current;
+    if (!element) return;
+    const measure = () => { if (element.isConnected) setDuration(element.getBoundingClientRect().width / 35); };
     const observer = new ResizeObserver(measure);
-    observer.observe(group.current);
+    observer.observe(element);
     measure();
     return () => observer.disconnect();
   }, []);

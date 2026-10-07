@@ -1,0 +1,6 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^maintenance-assets/ - [L]
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^ index.php [END]

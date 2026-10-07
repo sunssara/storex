@@ -51,3 +51,6 @@ Build, TypeScript and 12 existing tests pass. Browser confirms IBM Plex Sans bod
 
 ## Theme and logo update — 2026-10-07
 Added a localized keyboard-accessible light/dark toggle with localStorage persistence and early theme initialization. Both themes retain Storex brand blue. Vector paths extracted directly from the supplied white logo PDF; blue variant uses brandbook #034288. Favicon uses the original standalone brand mark. Standalone 404 respects saved theme. Build and typecheck passed; browser verified toggle, reload persistence, language navigation, mobile menu, light-theme project and solution pages, logo loading and no overflow at 360px. Desktop light home inspected at 1440px. No console errors observed.
+
+## Contact delivery and Turnstile — 2026-10-07
+Plesk PHP handler deployed; private secret is outside public root and repository with mode 600. Build/typecheck, 17 TypeScript tests and 28 PHP checks pass. Production GET returns 405; invalid CAPTCHA POST returns 403 CAPTCHA_INVALID. Real browser submission after user verification was accepted by the mail server and cleared the form. Inbox receipt awaits user confirmation. Turnstile checked visually at desktop and 360px without horizontal overflow or console errors. Success copy updated to the exact requested wording.

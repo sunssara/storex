@@ -96,10 +96,9 @@ body{font-size:17px}
 }
 .project-cover img{filter:none}.project-cover:after{background:linear-gradient(0deg,#05101e33,transparent 45%)}
 
-/* Preserve real project framing; image geometry follows the source photograph. */
-.detail-hero{aspect-ratio:auto;overflow:visible}
-.detail-hero img{position:static;width:auto;height:auto;max-width:100%;display:block;margin-inline:auto;object-fit:contain}
-.detail-hero .detail-metric{position:static;display:inline-flex;max-width:100%;margin-top:16px}
-.case-extra-image{display:block;width:auto;height:auto;max-width:100%;max-height:none;object-fit:contain}
+/* Keep original photo block geometry, contain the full source frame inside it. */
+.detail-hero img{object-fit:contain}
+.case-extra-image{width:100%;height:520px;max-height:520px;object-fit:contain}
 .project-photo:not(.project-cover) img{object-fit:contain}
 .project-card:hover img{transform:none}
+@media(max-width:600px){.case-extra-image{height:320px;max-height:320px}}

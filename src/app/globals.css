@@ -105,3 +105,4 @@ body{font-size:17px}
 
 .project-photo{padding:0;border:0;border-radius:0;box-shadow:none}
 .detail-hero{width:100%;margin-inline:auto}.detail-hero img{object-position:50% 50%;transform:none}.case-extra-image{object-position:50% 50%;margin-inline:auto}
+.detail-hero{aspect-ratio:auto}.detail-hero img{display:block;position:static;width:100%;height:auto;object-fit:contain}

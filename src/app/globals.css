@@ -142,5 +142,5 @@ body{font-size:17px}
 .case-slide-dots button{display:grid;place-items:center;width:30px;height:44px;padding:0;border:0;background:transparent}
 .case-slide-dots span{display:block;width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.4}
 .case-slide-dots button[aria-pressed=true] span{opacity:1;background:var(--blue)}
-@media(max-width:600px){.case-slideshow{margin-top:30px}.case-slideshow-frame{aspect-ratio:4/3}}
+@media(max-width:600px){.case-slideshow{margin-top:30px}}
 @media(prefers-reduced-motion:reduce){.case-slide{transition:none}}

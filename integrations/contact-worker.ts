@@ -1,9 +1,11 @@
-import { deliverEnquiry } from '../src/lib/contact';
+import { deliverEnquiry, validateEnquiry } from '../src/lib/contact';
+import { verifyCaptcha } from '../src/lib/verify-captcha';
 
 export interface ContactEnvironment {
   RESEND_API_KEY?: string;
   CONTACT_FROM?: string;
   ALLOWED_ORIGIN?: string;
+  TURNSTILE_SECRET_KEY?: string;
 }
 
 // Standalone Fetch API handler. Deploy separately from the static site.
@@ -40,6 +42,12 @@ export async function handleContact(request: Request, env: ContactEnvironment, t
     for (const chunk of chunks) { merged.set(chunk, offset); offset += chunk.byteLength; }
     data = JSON.parse(new TextDecoder().decode(merged));
   } catch { return reply(400, {ok:false, code:'INVALID'}); }
+  if (!validateEnquiry(data)) return reply(400, {ok:false, code:'INVALID'});
+  if (!env.TURNSTILE_SECRET_KEY?.trim() || !env.RESEND_API_KEY?.trim() || !env.CONTACT_FROM?.trim()) return reply(503, {ok:false, code:'UNAVAILABLE'});
+  let hostname: string;
+  try { hostname = new URL(configuredOrigin!).hostname; } catch { return reply(503, {ok:false, code:'UNAVAILABLE'}); }
+  const verification = await verifyCaptcha((data as Record<string, unknown>).captchaToken, env.TURNSTILE_SECRET_KEY, hostname, transport);
+  if (verification !== 'ok') return reply(verification === 'invalid' ? 403 : 503, {ok:false, code:verification === 'invalid' ? 'CAPTCHA_INVALID' : 'UNAVAILABLE'});
   const result = await deliverEnquiry(data, {apiKey:env.RESEND_API_KEY, from:env.CONTACT_FROM}, transport);
   return reply(result.status, result.body);
 }

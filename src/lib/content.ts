@@ -18,7 +18,6 @@ export const copy = {
   scroll: L('ЛИСТАЙТЕ, ЧТОБЫ УЗНАТЬ БОЛЬШЕ', 'ТОЛЫҒЫРАҚ БІЛУ ҮШІН ТӨМЕН ЖЫЛЖЫҢЫЗ', 'SCROLL TO EXPLORE'),
   stats: L(['на рынке', 'специалистов', 'проектов в год', 'поддержка'], ['нарықта', 'маман', 'жылына жоба', 'қолдау'], ['in business', 'specialists', 'projects a year', 'support']),
   since: L('с 2017', '2017 жылдан', 'since 2017'),
-  statsSource: L('Показатели из корпоративной презентации Storex.', 'Көрсеткіштер Storex корпоративтік таныстырылымынан алынған.', 'Figures from the Storex corporate presentation.'),
   solutionsLabel: L('01 / НАШИ КОМПЕТЕНЦИИ', '01 / БІЗДІҢ ҚҰЗЫРЕТТЕР', '01 / OUR EXPERTISE'),
   solutionsTitle: L('Сложные технологии.\nПонятные решения.', 'Күрделі технологиялар.\nТүсінікті шешімдер.', 'Complex technology.\nClear solutions.'),
   solutionsIntro: L('Весь цифровой контур вашей компании — в одной точке ответственности.', 'Компанияңыздың бүкіл цифрлық ортасы — бір жауапты серіктестің қолында.', 'Your entire digital environment. One accountable partner.'),

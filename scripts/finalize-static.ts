@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { copy, locales } from '../src/lib/content';
 const out=resolve('out');
@@ -9,3 +9,6 @@ writeFileSync(resolve(out,'404.html'),`<!doctype html><html lang="ru"><head><met
 writeFileSync(resolve(out,'.htaccess'),`DirectoryIndex index.html\nErrorDocument 404 /404.html\n`);
 writeFileSync(resolve(out,'.nojekyll'),'');
 console.log('Static export complete: out/ (HTML, CSS, JS, fonts, images, sitemap, localised 404).');
+
+copyFileSync('integrations/contact-php/contact.php',resolve(out,'contact.php'));
+copyFileSync('integrations/contact-php/handler.php',resolve(out,'contact-handler.php'));

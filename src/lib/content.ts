@@ -42,7 +42,7 @@ export const copy = {
   consent: L('Согласен на обработку данных для ответа на обращение.', 'Өтінішке жауап беру үшін деректерімді өңдеуге келісемін.', 'I agree to the processing of my data to respond to this enquiry.'),
   send: L('Отправить запрос', 'Сұрау жіберу', 'Send enquiry'),
   sending: L('Отправляем…', 'Жіберілуде…', 'Sending…'),
-  success: L('Спасибо! Ваш запрос передан в Storex.', 'Рақмет! Сұрауыңыз Storex компаниясына жіберілді.', 'Thank you. Your enquiry has been sent to Storex.'),
+  success: L('Спасибо! Ваш запрос передан в Storex.', 'Рақмет! Сұрауыңыз Storex компаниясына жіберілді.', 'Your enquiry has been sent successfully.'),
   unavailable: L('Отправка через сайт пока недоступна. Напишите на info@storex.kz или позвоните +7 (7172) 97-20-86.', 'Сайт арқылы жіберу әзірге қолжетімсіз. info@storex.kz поштасына жазыңыз немесе +7 (7172) 97-20-86 нөміріне қоңырау шалыңыз.', 'Online submission is currently unavailable. Email info@storex.kz or call +7 (7172) 97-20-86.'),
   invalid: L('Проверьте обязательные поля, email и согласие на обработку данных.', 'Міндетті өрістерді, email мекенжайын және деректерді өңдеуге келісімді тексеріңіз.', 'Check the required fields, email address and data-processing consent.'),
   failed: L('Не удалось отправить запрос. Повторите попытку или свяжитесь с нами по email.', 'Сұрауды жіберу мүмкін болмады. Қайта көріңіз немесе email арқылы хабарласыңыз.', 'Your enquiry could not be sent. Please try again or contact us by email.'),
@@ -72,7 +72,7 @@ export const copy = {
     'Сайтта тіркелу, өтініштер дерекқоры немесе жарнамалық трекерлер жоқ. Өтініш алушының пошта жүйесінде сақталады. Деректерді өңдеу немесе жою мәселелері бойынша info@storex.kz мекенжайына жазыңыз.',
   ], [
     'This form lets you contact STOREX LLP about projects and services. We ask for your name, company, email, project description and, optionally, phone number.',
-    'These details are sent through the Resend email service to info@storex.kz so that Storex can review your enquiry and contact you. Only include information needed to discuss the project; do not send passwords or confidential documents.',
+    'These details are sent through the hosting mail server to info@storex.kz so that Storex can review your enquiry and contact you. Only include information needed to discuss the project; do not send passwords or confidential documents.',
     'The website has no registration, enquiry database or advertising trackers. Your enquiry is retained in the recipient’s email system. For questions about processing or deleting your data, contact info@storex.kz.',
   ]),
 };

@@ -1,4 +1,4 @@
 {
-  "endpoint": "",
-  "turnstileSiteKey": ""
+  "endpoint": "https://storex.kz/contact.php",
+  "turnstileSiteKey": "0x4AAAAAAFQO5OW3dhmWJVpy"
 }

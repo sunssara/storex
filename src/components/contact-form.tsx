@@ -30,7 +30,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
       let endpoint: URL;
       try { endpoint = new URL(config.endpoint); } catch { setState('unavailable'); return; }
       if (endpoint.protocol !== 'https:') { setState('unavailable'); return; }
-      const result = await fetch(endpoint, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, captchaToken, consent: data.consent === 'on', locale }), signal: AbortSignal.timeout(20000) });
+      const result = await fetch(endpoint, { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, captchaToken, page: window.location.pathname, consent: data.consent === 'on', locale }), signal: AbortSignal.timeout(20000) });
       setCaptchaToken(''); setCaptchaAttempt(n=>n+1);
       const body = await result.json();
       if (result.ok && body.ok) { setState('success'); form.reset(); }

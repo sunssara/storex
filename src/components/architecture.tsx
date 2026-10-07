@@ -17,7 +17,6 @@ function Server({ x, y, rows = 3, id }: { x: number; y: number; rows?: number; i
 export function Architecture({ locale }: { locale: Locale }) {
   const t = labels[locale];
   return <div className="architecture" role="img" aria-label={t.join(', ')}>
-    <div className="architecture-coordinate">SX — 001 / {L('АРХИТЕКТУРА СИСТЕМЫ', 'ЖҮЙЕ АРХИТЕКТУРАСЫ', 'SYSTEM ARCHITECTURE')[locale]}</div>
     <svg viewBox="0 0 600 520" aria-hidden="true">
       <defs>
         <linearGradient id="front" x2="0" y2="1"><stop stopColor="#18417b" /><stop offset="1" stopColor="#0a2141" /></linearGradient>
@@ -42,12 +41,12 @@ export function Architecture({ locale }: { locale: Locale }) {
         <circle cx="70" cy="-75" r="4" fill="#8bc0ff" />
       </g>
       <g fontSize="9" fontFamily="monospace" fill="#8ba5c4" letterSpacing="1.5">
-        <text x="84" y="100">01 / {t[0]}</text><path d="M89 111H151V124" stroke="#426485" fill="none" />
-        <text x="363" y="105">02 / {t[1]}</text><path d="M368 116H410V130" stroke="#426485" fill="none" />
-        <text x="230" y="459">03 / {t[2]}</text><path d="M300 431V443" stroke="#426485" />
+        <text x="84" y="100">{t[0]}</text><path d="M89 111H151V124" stroke="#426485" fill="none" />
+        <text x="363" y="105">{t[1]}</text><path d="M368 116H410V130" stroke="#426485" fill="none" />
+        <text x="230" y="459">{t[2]}</text><path d="M300 431V443" stroke="#426485" />
       </g>
       <g fill="#81a1c4"><circle cx="69" cy="305" r="2"/><circle cx="548" cy="294" r="2"/><circle cx="300" cy="451" r="2"/></g>
     </svg>
-    <div className="architecture-status"><span className="status-dot" />{t[3]}<span className="architecture-code">IT + AV + SECURITY</span></div>
+    <div className="architecture-status"><span className="status-dot" />{t[3]}</div>
   </div>;
 }

@@ -3,7 +3,6 @@ export function HeroVisual({ kind, locale }: { kind: 'security' | 'av'; locale: 
   const security = kind === 'security';
   const label = security ? L('ЗАЩИЩЁННАЯ СЕТЬ', 'ҚОРҒАЛҒАН ЖЕЛІ', 'PROTECTED NETWORK')[locale] : L('ЕДИНОЕ AV-ПРОСТРАНСТВО', 'БІРЫҢҒАЙ AV-КЕҢІСТІК', 'CONNECTED AV SPACE')[locale];
   return <div className="architecture" role="img" aria-label={label}>
-    <div className="architecture-coordinate">SX — {security ? '002' : '003'} / {label}</div>
     <svg viewBox="0 0 600 520" aria-hidden="true">
       <path d="M25 320L300 160L575 320L300 480Z M80 350L355 190 M135 380L410 220 M190 410L465 250 M245 440L520 280 M80 288L355 448 M135 256L410 416 M190 224L465 384 M245 192L520 352" fill="none" stroke="#426fa6" opacity=".25"/>
       {security ? <>
@@ -19,6 +18,6 @@ export function HeroVisual({ kind, locale }: { kind: 'security' | 'av'; locale: 
         <circle className="server-light" cx="443" cy="141" r="4" fill="#b2d3ff"/>
       </>}
     </svg>
-    <div className="architecture-status"><span className="status-dot"/>{label}<span className="architecture-code">{security ? 'NETWORK + SECURITY' : 'VIDEO + AUDIO + CONTROL'}</span></div>
+    <div className="architecture-status"><span className="status-dot"/>{label}</div>
   </div>;
 }

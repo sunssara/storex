@@ -16,12 +16,18 @@ $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $configFile = $private . '/storex-maintenance.php';
 $config = is_readable($configFile) ? require $configFile : [];
 if (!is_array($config)) $config = [];
+$sessionDirectory = $private . '/storex-sessions';
+if (!is_dir($sessionDirectory) && !mkdir($sessionDirectory, 0700, true) && !is_dir($sessionDirectory)) {
+    http_response_code(503); exit('Вход временно недоступен.');
+}
+ini_set('session.save_handler', 'files');
+session_save_path($sessionDirectory);
 ini_set('session.use_strict_mode', '1');
 ini_set('session.use_only_cookies', '1');
 ini_set('session.gc_maxlifetime', '28800');
 session_name($local ? 'storex_dev_test' : '__Host-storex_dev');
 session_set_cookie_params(['lifetime'=>0, 'path'=>'/', 'secure'=>!$local, 'httponly'=>true, 'samesite'=>'Strict']);
-session_start();
+if (!session_start()) { http_response_code(503); exit('Вход временно недоступен.'); }
 $now = time();
 $authenticated = isset($_SESSION['authenticated'], $_SESSION['created'], $_SESSION['seen'])
     && $_SESSION['authenticated'] === true && $now - $_SESSION['created'] < 28800 && $now - $_SESSION['seen'] < 1800;

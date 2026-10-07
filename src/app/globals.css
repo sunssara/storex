@@ -39,3 +39,39 @@
 @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.hero-float,.hero-orbit{animation:none}}
 
 .captcha-block{margin-top:22px;min-width:0}.captcha-block>p,.captcha-block [role=alert] p{font-size:12px;line-height:1.7;margin-bottom:12px}.captcha-block>div{max-width:100%}.captcha-block .button{margin-top:10px}
+
+/* Continuous manufacturer ribbon: fixed pitch gives a constant 35 px/s. */
+.partners>.partner-marquee{display:block;margin-top:0;color:var(--text)}
+.partner-viewport{overflow:hidden;border-block:1px solid var(--line);background:#101925}
+.partner-track{display:flex;width:max-content;animation:partner-drift var(--marquee-duration) linear infinite;will-change:transform}
+.partner-group{display:flex;flex:none}
+.partner-item{flex:none;min-width:120px;height:124px;padding:30px 34px;display:flex;align-items:center;justify-content:center}
+.partner-item img{width:auto;max-width:none;height:36px;object-fit:contain;flex:none}
+.partner-marquee:hover .partner-track,.partner-marquee:focus-within .partner-track,.partner-marquee[data-paused=true] .partner-track{animation-play-state:paused}
+.marquee-toggle{display:flex;align-items:center;gap:8px;margin:16px 0 0 auto;padding:9px 12px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px}
+.marquee-toggle:hover{color:var(--text)}
+@keyframes partner-drift{to{transform:translateX(-50%)}}
+/* Readable body copy and interface labels without changing heading hierarchy. */
+body{font-size:17px}
+.desktop-nav{font-size:15px;gap:24px;margin-left:0}.header-actions{gap:20px}.header-cta,.languages{font-size:12px}
+.eyebrow{font-size:12px}.hero-description{font-size:18px;max-width:490px;line-height:1.75}
+.button,.text-link{font-size:14px}.hero-bottom,.stats span{font-size:14px}.hero-bottom>a{font-size:11px}
+.section-heading>p{font-size:17px}.service-card p,.project-card p,.process-step p,.expertise-grid p,.values-grid p,.award p{font-size:16px;line-height:1.75}
+.service-bottom,.photo-category,.project-meta,.space-types span,.breadcrumbs,.filters button{font-size:13px}
+.process-step h3{font-size:19px}.contact-intro,.page-intro>p,.detail-intro>p,.case-content p,.solution-content p,.about-statement p,.privacy-body p{font-size:18px}
+.contact-address,.support-contact p,.deliverables li,.equipment-tags{font-size:16px}
+.contact-form label{font-size:14px}.contact-form input:not([type=checkbox]),.contact-form textarea{font-size:16px}
+.consent{font-size:13px!important}.captcha-block>p,.captcha-block [role=alert] p{font-size:14px}
+.footer-top>span{font-size:14px}.footer-bottom{font-size:12px}
+@media(max-width:600px){
+  body{font-size:16px}.hero-description{font-size:16px}.eyebrow{font-size:11px}.languages{font-size:11px}.header-actions{gap:12px}
+  .button,.text-link,.section-heading .text-link{font-size:13px}.hero-bottom{font-size:11px}.hero-bottom>a{font-size:0}.stats span{font-size:13px}
+  .section-heading>p,.service-card p,.project-card p,.process-step p,.expertise-grid p,.values-grid p,.award p{font-size:15px}
+  .project-meta{font-size:11px;letter-spacing:.06em}.service-bottom,.breadcrumbs{font-size:12px}
+  .contact-intro,.page-intro>p,.detail-intro>p,.case-content p,.solution-content p,.about-statement p,.privacy-body p{font-size:16px}
+  .partner-item{height:104px;padding:20px 26px}.partner-item img{height:30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .partner-track{animation:none;transform:none;width:100%;will-change:auto}.partner-group{flex-wrap:wrap;width:100%;justify-content:center}.partner-group[aria-hidden=true]{display:none}.partner-item{flex:1 0 150px;max-width:240px}.marquee-toggle{display:none}
+}
+@media(prefers-reduced-motion:reduce){.partner-item img{max-width:100%}}

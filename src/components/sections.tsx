@@ -1,4 +1,5 @@
 import { PartnerMarquee } from './partner-marquee';
+import { homepageProjectCovers } from '@/lib/project-covers';
 import { tildaCopy } from '@/lib/tilda-content';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -26,7 +27,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
   return <section className="section container" id="expertise"><Eyebrow>{copy.solutionsLabel[locale]}</Eyebrow><div className="section-heading"><h2>{copy.solutionsTitle[locale]}</h2><p>{copy.solutionsIntro[locale]}</p></div><ServiceCards locale={locale} /><ConsultationCTA locale={locale}/></section>;
 }
 export function ProjectsSection({ locale }: { locale: Locale }) {
-  return <section className="section projects-section"><div className="container"><Eyebrow>{copy.projectsLabel[locale]}</Eyebrow><div className="section-heading"><h2>{copy.projectsTitle[locale]}</h2><Link className="text-link" href={`/${locale}/projects`}>{copy.allProjects[locale]}<ArrowUpRight size={19}/></Link></div><div className="project-grid">{projects.slice(0, 2).map(p => <ProjectCard project={p} locale={locale} key={p.slug}/>)}</div><ConsultationCTA locale={locale}/></div></section>;
+  return <section className="section projects-section"><div className="container"><Eyebrow>{copy.projectsLabel[locale]}</Eyebrow><div className="section-heading"><h2>{copy.projectsTitle[locale]}</h2><Link className="text-link" href={`/${locale}/projects`}>{copy.allProjects[locale]}<ArrowUpRight size={19}/></Link></div><div className="project-grid">{projects.slice(0, 2).map(p => <ProjectCard project={p} locale={locale} key={p.slug} cover={homepageProjectCovers[p.slug]}/>)}</div><ConsultationCTA locale={locale}/></div></section>;
 }
 export function Process({ locale }: { locale: Locale }) {
   return <section className="section container"><Eyebrow>{copy.processLabel[locale]}</Eyebrow><h2>{copy.processTitle[locale]}</h2><div className="process-grid">{copy.process[locale].map((s, i) => <div className="process-step" key={s}><div className="step-number">0{i+1}<span /><ArrowUpRight size={17} /></div><h3>{s}</h3><p>{copy.processText[locale][i]}</p></div>)}</div><ConsultationCTA locale={locale}/></section>;

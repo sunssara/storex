@@ -94,3 +94,4 @@ body{font-size:17px}
  .button{font-size:13px;min-height:48px;padding:13px 18px}.hero-buttons{display:flex;flex-wrap:wrap;gap:10px}.hero-buttons .button{gap:12px}.hero-buttons .button svg{flex:none;width:16px}.section-cta{margin-top:26px}.section-cta .button{max-width:100%}
  .partner-item{height:92px;padding-inline:36px}.partner-item img{height:25px}.case-summary dd{font-size:14px}.project-meta{font-size:13px}.case-summary{gap:16px;margin-top:20px}.process-grid{grid-template-columns:1fr}.project-card h3{font-size:25px}.big-email{overflow-wrap:anywhere}
 }
+.project-cover img{filter:none}.project-cover:after{background:linear-gradient(0deg,#05101e33,transparent 45%)}

@@ -104,3 +104,4 @@ body{font-size:17px}
 @media(max-width:600px){.case-extra-image{height:320px;max-height:320px}}
 
 .project-photo{padding:0;border:0;border-radius:0;box-shadow:none}
+.detail-hero{width:100%;margin-inline:auto}.detail-hero img{object-position:50% 50%;transform:none}.case-extra-image{object-position:50% 50%;margin-inline:auto}

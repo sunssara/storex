@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { BrandLogo } from './brand-logo';
+import { SolutionsMenu } from './solutions-menu';
 import { ThemeToggle } from './theme-toggle';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -21,13 +22,13 @@ export function Header({ locale }: { locale: Locale }) {
   return <header className="site-header">
     <div className="container header-inner">
       <Link href={`/${locale}`} className="logo" aria-label="Storex"><BrandLogo priority/></Link>
-      <nav className="desktop-nav" aria-label={copy.menu[locale]}>{links.map((url, i) => <Link key={url} href={`/${locale}/${url}`} aria-current={pathname.includes(`/${url}`) ? 'page' : undefined}>{copy.nav[locale][i]}</Link>)}</nav>
+      <nav className="desktop-nav" aria-label={copy.menu[locale]}>{links.map((url, i) => i === 0 ? <SolutionsMenu key={`${pathname}-desktop`} locale={locale} pathname={pathname}/> : <Link key={url} href={`/${locale}/${url}`} aria-current={pathname.includes(`/${url}`) ? 'page' : undefined}>{copy.nav[locale][i]}</Link>)}</nav>
       <div className="header-actions"><ThemeToggle locale={locale}/>
         <nav className="languages" aria-label={{ru:'Язык',kk:'Тіл',en:'Language'}[locale]}>{locales.map(l => <Link key={l} href={pathname.replace(/^\/(ru|kk|en)(?=\/|$)/, `/${l}`)} lang={l} hrefLang={l} aria-current={l === locale ? 'true' : undefined}>{l === 'kk' ? 'ҚАЗ' : l.toUpperCase()}</Link>)}</nav>
         <Link href={`/${locale}/contacts`} className="header-cta">{copy.discuss[locale]} <ArrowUpRight size={15} /></Link>
         <button className="menu-toggle" ref={toggle} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? copy.close[locale] : copy.menu[locale]} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </div>
     </div>
-    <nav id="mobile-nav" className="mobile-nav" hidden={!open} aria-label={copy.menu[locale]}>{links.map((url, i) => <Link key={url} href={`/${locale}/${url}`}>{copy.nav[locale][i]}<ArrowUpRight size={18} /></Link>)}<a href="tel:+77172972086">+7 (7172) 97-20-86</a></nav>
+    <nav id="mobile-nav" className="mobile-nav" hidden={!open} aria-label={copy.menu[locale]}>{links.map((url, i) => i === 0 ? <SolutionsMenu key={`${pathname}-${open}-mobile`} locale={locale} pathname={pathname} mobile/> : <Link key={url} href={`/${locale}/${url}`}>{copy.nav[locale][i]}<ArrowUpRight size={18} /></Link>)}<a href="tel:+77172972086">+7 (7172) 97-20-86</a></nav>
   </header>;
 }

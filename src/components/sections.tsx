@@ -3,18 +3,15 @@ import { tildaCopy } from '@/lib/tilda-content';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BrandLogo } from './brand-logo';
-import { ArrowDown, ArrowUpRight, AudioLines, Cloud, Headset, ScanLine, Server, ShieldCheck, Plus } from 'lucide-react';
+import { ArrowUpRight, AudioLines, Cloud, Headset, ScanLine, Server, ShieldCheck, Plus } from 'lucide-react';
 import { copy, services, projects, type Locale, type Service } from '@/lib/content';
-import { Architecture } from './architecture';
 import { ContactForm } from './contact-form';
 import { ProjectCard } from './project-card';
 const icons = { audit: ScanLine, server: Server, shield: ShieldCheck, cloud: Cloud, av: AudioLines, support: Headset };
 export function ServiceIcon({ kind, size = 28 }: { kind: Service['icon']; size?: number }) { const Icon = icons[kind]; return <Icon size={size} strokeWidth={1.4} />; }
 export function Eyebrow({ children }: { children: React.ReactNode }) { return <div className="eyebrow"><span />{children}</div>; }
 export function Button({ href, children, secondary = false }: { href: string; children: React.ReactNode; secondary?: boolean }) { return <Link href={href} className={`button ${secondary ? 'secondary' : 'primary'}`}>{children}<ArrowUpRight size={18} /></Link>; }
-export function Hero({ locale }: { locale: Locale }) {
-  return <section className="hero container"><div className="hero-main"><div className="hero-copy"><Eyebrow>{copy.heroLabel[locale]}</Eyebrow><h1>{copy.heroTitle[locale].map((line, i) => <span key={line} className={i === 2 ? 'accent' : ''}>{line}</span>)}</h1><p className="hero-description">{copy.heroText[locale]}</p><div className="hero-buttons"><Button href={`/${locale}/contacts`}>{copy.discuss[locale]}</Button><Button href={`/${locale}/projects`} secondary>{copy.ourProjects[locale]}</Button></div></div><Architecture locale={locale} /></div><div className="hero-bottom"><span>{copy.lifecycle[locale]}</span><a href="#expertise">{copy.scroll[locale]}<ArrowDown size={14} /></a></div></section>;
-}
+export { HeroSlideshow as Hero } from './hero-slideshow';
 export function Stats({ locale }: { locale: Locale }) {
   return <div className="stats-wrap container"><div className="stats">{[copy.since[locale], '20+', '50+', '24/7'].map((n, i) => <div key={i}><strong className={i === 0 ? 'since' : ''}>{n}</strong><span>{copy.stats[locale][i]}</span><Plus size={12} aria-hidden="true" /></div>)}</div></div>;
 }

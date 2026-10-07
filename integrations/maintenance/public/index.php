@@ -29,24 +29,6 @@ if (!$authenticated) unset($_SESSION['authenticated'], $_SESSION['created'], $_S
 else $_SESSION['seen'] = $now;
 $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
 function escape(string $s): string { return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
-function loginAllowed(string $private): bool {
-    $dir = $private . '/storex-access';
-    if (!is_dir($dir) && !mkdir($dir, 0700, true) && !is_dir($dir)) return false;
-    $file = fopen($dir . '/attempts.json', 'c+');
-    if (!$file || !flock($file, LOCK_EX)) { if ($file) fclose($file); return false; }
-    try {
-        $all = json_decode(stream_get_contents($file), true) ?: [];
-        $now = time();
-        foreach ($all as $key=>$entry) if (!is_array($entry) || ($entry['start'] ?? 0) <= $now - 900) unset($all[$key]);
-        $key = hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown');
-        $entry = $all[$key] ?? ['start'=>$now, 'count'=>0];
-        $global = $all['global'] ?? ['start'=>$now, 'count'=>0];
-        $allowed = $entry['count'] < 10 && $global['count'] < 200 && count($all) < 10000;
-        if ($allowed) { $entry['count']++; $global['count']++; $all[$key]=$entry; $all['global']=$global; }
-        rewind($file); ftruncate($file, 0); fwrite($file, json_encode($all)); fflush($file);
-        return $allowed;
-    } finally { flock($file, LOCK_UN); fclose($file); }
-}
 $error = '';
 $showLogin = $path === '/__developer/login';
 if ($method === 'POST') {
@@ -60,8 +42,6 @@ if ($method === 'POST') {
             $_SESSION=[]; session_destroy();
             setcookie(session_name(), '', ['expires'=>1,'path'=>'/','secure'=>!$local,'httponly'=>true,'samesite'=>'Strict']);
             header('Location: /', true, 303); exit;
-        } elseif (!loginAllowed($private)) {
-            http_response_code(429); header('Retry-After: 900'); $error = 'Слишком много попыток. Попробуйте через 15 минут.';
         } else {
             $username = $_POST['username'] ?? ''; $password = $_POST['password'] ?? '';
             $validPassword = is_string($password) && strlen($password) <= 1024

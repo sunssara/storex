@@ -48,3 +48,6 @@ Microsoft Edge / Chromium, 1440, 768 и 360 px; русский, казахски
 
 ## Brandbook verification — 2026-10-07
 Build, TypeScript and 12 existing tests pass. Browser confirms IBM Plex Sans body, Play headings and primary button rgb(3, 66, 136). Home pages ru/kk/en checked at 360 and 768 px; Russian desktop at 1440 px. No horizontal overflow or broken images. Kazakh mobile rendering visually reviewed. AV solution, project catalog, about, contacts, case study and standalone 404 checked at 360 px; no overflow or browser console errors. Plesk remains on login screen; this update is not yet deployed there.
+
+## Theme and logo update — 2026-10-07
+Added a localized keyboard-accessible light/dark toggle with localStorage persistence and early theme initialization. Both themes retain Storex brand blue. Vector paths extracted directly from the supplied white logo PDF; blue variant uses brandbook #034288. Favicon uses the original standalone brand mark. Standalone 404 respects saved theme. Build and typecheck passed; browser verified toggle, reload persistence, language navigation, mobile menu, light-theme project and solution pages, logo loading and no overflow at 360px. Desktop light home inspected at 1440px. No console errors observed.

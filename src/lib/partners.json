@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Cisco",
+    "image": "/images/partners/cisco.svg",
+    "source": "https://static.tildacdn.info/tild6632-6136-4639-b562-316639363964/photo.svg"
+  },
+  {
+    "name": "ATEN",
+    "image": "/images/partners/aten.svg",
+    "source": "https://static.tildacdn.info/tild3064-3738-4966-a365-623438623365/photo.svg"
+  },
+  {
+    "name": "Samsung",
+    "image": "/images/partners/samsung.svg",
+    "source": "https://static.tildacdn.info/tild6361-6639-4430-b739-383934333634/photo.svg"
+  },
+  {
+    "name": "Sennheiser",
+    "image": "/images/partners/sennheiser.svg",
+    "source": "https://static.tildacdn.info/tild3062-3866-4230-b730-333036326535/photo.svg"
+  },
+  {
+    "name": "Panasonic",
+    "image": "/images/partners/panasonic.svg",
+    "source": "https://static.tildacdn.info/tild6366-3934-4965-a230-613338373438/photo.svg"
+  },
+  {
+    "name": "Crestron",
+    "image": "/images/partners/crestron.svg",
+    "source": "https://static.tildacdn.info/tild3733-3932-4334-a262-363563383362/photo.svg"
+  },
+  {
+    "name": "Vaddio",
+    "image": "/images/partners/vaddio.svg",
+    "source": "https://static.tildacdn.info/tild6231-3730-4436-b035-616563663666/photo.svg"
+  },
+  {
+    "name": "Yamaha",
+    "image": "/images/partners/yamaha.svg",
+    "source": "https://static.tildacdn.info/tild6166-3032-4266-b863-653865376462/photo.svg"
+  },
+  {
+    "name": "Poly",
+    "image": "/images/partners/poly.svg",
+    "source": "https://static.tildacdn.info/tild3834-3532-4333-b337-373563633930/photo.svg"
+  },
+  {
+    "name": "Check Point",
+    "image": "/images/partners/check-point.svg",
+    "source": "https://static.tildacdn.info/tild3336-3839-4435-b164-353733366131/photo.svg"
+  },
+  {
+    "name": "LG",
+    "image": "/images/partners/lg.svg",
+    "source": "https://static.tildacdn.info/tild3361-3365-4435-b434-656465633066/photo.svg"
+  },
+  {
+    "name": "Huawei",
+    "image": "/images/partners/huawei.svg",
+    "source": "https://static.tildacdn.info/tild3866-3262-4266-b465-323063393532/photo.svg"
+  },
+  {
+    "name": "Bosch",
+    "image": "/images/partners/bosch.svg",
+    "source": "https://static.tildacdn.info/tild3965-6133-4639-b836-653963366439/photo.svg"
+  },
+  {
+    "name": "Optoma",
+    "image": "/images/partners/optoma.svg",
+    "source": "https://static.tildacdn.info/tild6532-3965-4437-b263-333435643638/photo.svg"
+  },
+  {
+    "name": "Kaspersky",
+    "image": "/images/partners/kaspersky.svg",
+    "source": "https://static.tildacdn.info/tild3366-3862-4436-b261-616565316462/kaspersky-logo-01.svg"
+  },
+  {
+    "name": "Yealink",
+    "image": "/images/partners/yealink.svg",
+    "source": "https://static.tildacdn.info/tild6433-6366-4830-b636-616639643664/photo.svg"
+  },
+  {
+    "name": "Shure",
+    "image": "/images/partners/shure.svg",
+    "source": "https://static.tildacdn.info/tild3530-6530-4964-b265-626339373866/photo.svg"
+  },
+  {
+    "name": "Dell",
+    "image": "/images/partners/dell.svg",
+    "source": "https://static.tildacdn.info/tild3731-3866-4034-b862-336139656662/photo.svg"
+  },
+  {
+    "name": "Vinteo",
+    "image": "/images/partners/vinteo.svg",
+    "source": "https://static.tildacdn.info/tild3531-3661-4234-a538-303666663265/photo.svg"
+  },
+  {
+    "name": "Extron",
+    "image": "/images/partners/extron.svg",
+    "source": "https://static.tildacdn.info/tild3637-3563-4032-b935-393935373135/photo.svg"
+  }
+]

@@ -96,3 +96,10 @@ body{font-size:17px}
 }
 .project-cover img{filter:none}.project-cover:after{background:linear-gradient(0deg,#05101e33,transparent 45%)}
 .final-consultation{padding-bottom:36px}.final-consultation .section-cta{margin-top:0}@media(max-width:600px){.final-consultation{padding-bottom:24px}}
+/* Preserve real project framing; image geometry follows the source photograph. */
+.detail-hero{aspect-ratio:auto;overflow:visible}
+.detail-hero img{position:static;width:auto;height:auto;max-width:100%;display:block;margin-inline:auto;object-fit:contain}
+.detail-hero .detail-metric{position:static;display:inline-flex;max-width:100%;margin-top:16px}
+.case-extra-image{display:block;width:auto;height:auto;max-width:100%;max-height:none;object-fit:contain}
+.project-photo:not(.project-cover) img{object-fit:contain}
+.project-card:hover img{transform:none}

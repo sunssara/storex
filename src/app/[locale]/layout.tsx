@@ -4,7 +4,12 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/sections';
 import { copy, isLocale, locales, siteUrl } from '@/lib/content';
 import '../globals.css';
-import '@fontsource-variable/manrope';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/play/400.css';
+import '@fontsource/play/700.css';
 
 export function generateStaticParams() { return locales.map(locale => ({ locale })); }
 export const dynamicParams = false;

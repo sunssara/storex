@@ -44,3 +44,6 @@
 
 ## Все проекты organized.pdf — 07.10.2026
 Каталог: 12 материалов, покрывающих страницы 4–15. Страницы 4/5/8 уточняют оборудование существующих кейсов; добавлены конференц-зал КазНИПИ (9), Жетыбай (12), интерактивная LG 86 дюймов (13), переговорная АНПЗ (14), мобильные комплексы с полным списком 8 заказчиков (15). Заказчик страницы 13 не указан — название не выдумано. Фото страницы 15 иллюстрирует типовое мобильное решение, не приписывается отдельному заказчику. Страницы 16–17 описывают продукты Vinteo/YMS и пилоты без названий заказчиков: не представлены как завершённые проекты. Фото извлечены из встроенных изображений PDF; ошибки распознавания названий производителей исправлены.
+
+## Brandbook update — 2026-10-07
+Brandbook STOREX.pdf, pages 9–11: primary blue #034288 (RGB 3, 66, 136), primary fonts IBM Plex Sans and Play, Arial fallback. Website uses Play for headings and IBM Plex Sans for text, self-hosted with Cyrillic Extended subsets. Solid controls and featured service card use exact brand blue; #81a1c4 is a 50% white tint for legibility on dark backgrounds. Original logo artwork is unchanged.

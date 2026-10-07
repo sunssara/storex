@@ -45,3 +45,6 @@ Microsoft Edge / Chromium, 1440, 768 и 360 px; русский, казахски
 
 ## Полный каталог PDF
 Сборка 72 содержательных страниц и 12 тестов успешны. Проверены 15 новых страниц (5 кейсов × 3 языка) при 360 px без переполнений; все восемь мобильных внедрений присутствуют во всех языках. На AV-странице 12 карточек при 768/1440 px, переполнений нет. Фильтр мобильных комплексов показывает одну карточку, сброс — 12. Ошибок консоли не обнаружено. Полный длинный браузерный прогон прерван тайм-аутом; результаты указаны только для повторно завершённых проверок.
+
+## Brandbook verification — 2026-10-07
+Build, TypeScript and 12 existing tests pass. Browser confirms IBM Plex Sans body, Play headings and primary button rgb(3, 66, 136). Home pages ru/kk/en checked at 360 and 768 px; Russian desktop at 1440 px. No horizontal overflow or broken images. Kazakh mobile rendering visually reviewed. AV solution, project catalog, about, contacts, case study and standalone 404 checked at 360 px; no overflow or browser console errors. Plesk remains on login screen; this update is not yet deployed there.

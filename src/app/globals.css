@@ -41,15 +41,13 @@
 .captcha-block{margin-top:22px;min-width:0}.captcha-block>p,.captcha-block [role=alert] p{font-size:12px;line-height:1.7;margin-bottom:12px}.captcha-block>div{max-width:100%}.captcha-block .button{margin-top:10px}
 
 /* Continuous manufacturer ribbon: fixed pitch gives a constant 35 px/s. */
-.partners>.partner-marquee{display:block;margin-top:0;color:var(--text)}
-.partner-viewport{overflow:hidden;border-block:1px solid var(--line);background:#101925}
+.partners>.partner-marquee{display:block;width:100%;margin:0;color:var(--text)}
+.partner-viewport{overflow:hidden;background:#090e16}
 .partner-track{display:flex;width:max-content;animation:partner-drift var(--marquee-duration) linear infinite;will-change:transform}
 .partner-group{display:flex;flex:none}
 .partner-item{flex:none;min-width:120px;height:124px;padding:30px 34px;display:flex;align-items:center;justify-content:center}
 .partner-item img{width:auto;max-width:none;height:36px;object-fit:contain;flex:none}
-.partner-marquee:hover .partner-track,.partner-marquee:focus-within .partner-track,.partner-marquee[data-paused=true] .partner-track{animation-play-state:paused}
-.marquee-toggle{display:flex;align-items:center;gap:8px;margin:16px 0 0 auto;padding:9px 12px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px}
-.marquee-toggle:hover{color:var(--text)}
+.partner-marquee:hover .partner-track{animation-play-state:paused}
 @keyframes partner-drift{to{transform:translateX(-50%)}}
 /* Readable body copy and interface labels without changing heading hierarchy. */
 body{font-size:17px}
@@ -72,6 +70,6 @@ body{font-size:17px}
   .partner-item{height:104px;padding:20px 26px}.partner-item img{height:30px}
 }
 @media(prefers-reduced-motion:reduce){
-  .partner-track{animation:none;transform:none;width:100%;will-change:auto}.partner-group{flex-wrap:wrap;width:100%;justify-content:center}.partner-group[aria-hidden=true]{display:none}.partner-item{flex:1 0 150px;max-width:240px}.marquee-toggle{display:none}
+  .partner-track{animation:none;transform:none;width:100%;will-change:auto}.partner-group{flex-wrap:wrap;width:100%;justify-content:center}.partner-group[aria-hidden=true]{display:none}.partner-item{flex:1 0 150px;max-width:240px}
 }
 @media(prefers-reduced-motion:reduce){.partner-item img{max-width:100%}}
